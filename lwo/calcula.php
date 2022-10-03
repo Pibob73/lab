@@ -1,11 +1,11 @@
 <?php
-function compare($value): bool
+function compare(string $value): bool
 {
     $ofnumber = is_numeric($value);
     return $ofnumber or $value === '+' or $value === '-';
 }
 
-function separatly($argv): string
+function separatly(array $argv): string
 {
     $expression = $argv[1];
     foreach ($argv as $key => $value) {
