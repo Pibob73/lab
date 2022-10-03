@@ -18,7 +18,7 @@ function sumTime(string $timeone, string $timetwo): string
             if ($masssum[key($masssum)] >= 24)
                 $masssum[key($masssum)] = $masssum[key($masssum)] - 24;
         }
-        prev($masssum);//problem place!
+        prev($masssum);
         $key--;
     }
     return implode(':', $masssum);
