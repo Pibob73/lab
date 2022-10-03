@@ -1,8 +1,8 @@
 <?php
 function compare(string $value): bool
 {
-    $ofnumber = is_numeric($value);
-    return $ofnumber or $value === '+' or $value === '-';
+    $ofNumber = is_numeric($value);
+    return $ofNumber || $value === '+' || $value === '-';
 }
 
 function separatly(array $argv): string
@@ -17,12 +17,12 @@ function separatly(array $argv): string
 
 function calculator(string $value): string
 {
-    $massofletters = explode(' ', $value);
+    $massOfLetters = explode(' ', $value);
 
     $sum = 0;
-    foreach ($massofletters as $key => $value) {
+    foreach ($massOfLetters as $key => $value) {
         if (compare($value)) {
-            if ($massofletters[$key - 1] === '-' and $key != 0)
+            if ($massOfLetters[$key - 1] === '-' and $key != 0)
                 $value *= -1;
             if (is_numeric($value))
                 $sum += $value;
@@ -33,4 +33,3 @@ function calculator(string $value): string
 
 $value = separatly($argv);
 echo calculator($value), "\n";
-?>
