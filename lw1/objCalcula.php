@@ -2,32 +2,32 @@
 
 class Calculator
 {
-    public $expression;
+    private $expression = 0;
 
-    function __Calculator()
+    public function __construct()
     {
         $expression = 0;
     }
 
-    function sum(int $value)
+    public function sum(int $value) : Calculator
     {
         $this->expression += $value;
         return $this;
     }
 
-    function difference(int $value)
+    public function difference(int $value) : Calculator
     {
         $this->expression -= $value;
         return $this;
     }
 
-    function multiplication(int $value)
+    public function multiplication(int $value) : Calculator
     {
         $this->expression *= $value;
         return $this;
     }
 
-    function division(int $value)
+    public function division(int $value) : Calculator
     {
         if ($value !== 0) {
             $this->expression /= $value;
@@ -37,11 +37,11 @@ class Calculator
         return $this;
     }
 
-    function getResult(): string
+    public function getResult(): string
     {
         return $this->expression;
     }
 }
 
 $calc = new Calculator();
-echo $calc->sum(6)->division(0)->difference(2)->sum(6)->multiplication(2)->getResult();
+echo $calc->sum(6)->division(0)->difference(2)->sum(6)->multiplication(2)->getResult()."\n";
