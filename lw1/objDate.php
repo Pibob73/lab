@@ -10,11 +10,11 @@ class Date
 
     public function __construct(int $HDay, int $HMonth, int $HYear)
     {
-        if($this->examSymbol($HDay, $HMonth)){
+        if ($this->examSymbol($HDay, $HMonth)) {
             $this->month = 3;
             $this->day = 3;
             $this->year = 3;
-        }else {
+        } else {
             $this->year = $HYear;
             $this->month = $HMonth;
             $this->day = $HDay;
@@ -61,7 +61,7 @@ class Date
         else
             $massDate['month'] = intval(((($num % 365) - $difference) / 31) + $differenceFrom);
         $massDate['day'] = (($num % 365) - $difference) % 31;
-       return $massDate;
+        return $massDate;
     }
 
     private function examSymbol(int $HDay, int $HMonth): bool
@@ -107,7 +107,7 @@ class Date
         $b = 0;
         if ($num % 365 > 59) $b = 28;
         $key = ((($num % 365) - $b) % 31) % 7;
-        $massOfWeek = ['','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];
+        $massOfWeek = ['', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
         return $massOfWeek[$key];
     }
 
@@ -118,11 +118,11 @@ class Date
     }
 }
 
-$date = new Date(1, 2,1 );
+$date = new Date(1, 2, 1);
 $date2 = new Date(1, 2, 2);
-echo $date->sumday."\n";
-echo $date->format('en')."\n";
-echo $date->getDate()."\n";
-echo $date->diffDay($date2)."\n";
-echo $date->minusDay(5)."\n";
-echo $date->getDateOfWeek()."\n";
+echo $date->sumday . "\n";
+echo $date->format('en') . "\n";
+echo $date->getDate() . "\n";
+echo $date->diffDay($date2) . "\n";
+echo $date->minusDay(5) . "\n";
+echo $date->getDateOfWeek() . "\n";
