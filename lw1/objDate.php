@@ -8,38 +8,38 @@ class Date
     public int $sumday;
     public string $letter = '.';
 
-    public function __construct(int $HDay, int $HMonth, int $HYear)
+    public function __construct(int $hDay, int $hMonth, int $hYear)
     {
-        if ($this->examSymbol($HDay, $HMonth)) {
+        if ($this->examSymbol($hDay, $hMonth)) {
             $this->month = 3;
             $this->day = 3;
             $this->year = 3;
         } else {
-            $this->year = $HYear;
-            $this->month = $HMonth;
-            $this->day = $HDay;
+            $this->year = $hYear;
+            $this->month = $hMonth;
+            $this->day = $hDay;
         }
-        $this->sumday = $HDay;
-        $this->convertToDay($HMonth, $HYear);
+        $this->sumday = $hDay;
+        $this->convertToDay($hMonth, $hYear);
     }
 
-    private function convertToDay(int $HMonth, int $HYear): int
+    private function convertToDay(int $hMonth, int $hYear): int
     {
-        $helper = intval(($HMonth - 1) / 2);
+        $helper = intval(($hMonth - 1) / 2);
         if ($helper === 0) $helper++;
         $leapYear = 28;
-        if ($HYear % 4 === 0)
+        if ($hYear % 4 === 0)
             $leapYear = 29;
-        if ($HMonth <= 2)
+        if ($hMonth <= 2)
             $leapYear = 0;
         $coefficient = 1;
-        if ($HMonth - 1 === 0) $coefficient--;
-        if (($HMonth - 1) % 2 === 0 || $helper === 1) {
+        if ($hMonth - 1 === 0) $coefficient--;
+        if (($hMonth - 1) % 2 === 0 || $helper === 1) {
             $this->sumday += ($helper - 1) * 30 + $coefficient * ($helper * 31) + $leapYear;
         } else
             $this->sumday += ($helper - 1) * 30 + ($helper + 1) * 31 + $leapYear;
-        $this->sumday += intval(($HYear - 1) / 4) * 366;
-        $this->sumday += (($HYear - 1) - intval(($HYear - 1) / 4)) * 365;
+        $this->sumday += intval(($hYear - 1) / 4) * 366;
+        $this->sumday += (($hYear - 1) - intval(($hYear - 1) / 4)) * 365;
         return 0;
     }
 
@@ -64,28 +64,28 @@ class Date
         return $massDate;
     }
 
-    private function examSymbol(int $HDay, int $HMonth): bool
+    private function examSymbol(int $hDay, int $hMonth): bool
     {
-        return $HDay > 31 && $HMonth > 12;
+        return $hDay > 31 && $hMonth > 12;
     }
 
-    private function examinationForLetter(string $HLetter): bool
+    private function examinationForLetter(string $hLetter): bool
     {
-        return $HLetter === 'ru' || $HLetter === 'en';
+        return $hLetter === 'ru' || $hLetter === 'en';
     }
 
-    public function diffDay(self $HDate): int
+    public function diffDay(self $hDate): int
     {
-        if ($this->sumday > $HDate->sumday)
-            return $this->sumday - $HDate->sumday;
-        return $HDate->sumday - $this->sumday;
+        if ($this->sumday > $hDate->sumday)
+            return $this->sumday - $hDate->sumday;
+        return $hDate->sumday - $this->sumday;
     }
 
-    public function format(string $HLetter): string
+    public function format(string $hLetter): string
     {
-        if (!$this->examinationForLetter($HLetter))
+        if (!$this->examinationForLetter($hLetter))
             return 'invalid value';
-        if ($HLetter === 'ru') {
+        if ($hLetter === 'ru') {
             $this->letter = '.';
         } else
             $this->letter = '-';
