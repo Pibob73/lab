@@ -8,16 +8,19 @@ abstract class Pizza
     public string $sauce;
     public array $toppings;
 
-    public function prepare()
+    public function prepare(): string
     {
-        echo "Началась готовка пиццы {$this->name}";
-        echo "Добавлен соус {$this->sauce}";
-        echo "Добавлены топики: ";
+        $phrase = "Началась готовка пиццы {$this->name}";
+        $phrase = "Добавлен соус {$this->sauce}";
+        $phrase = "Добавлены топики: ";
         foreach ($this->toppings as $part) {
-            echo "$part\n";
+            $phrase = "$part\n";
         }
+        return $phrase;
     }
-    public function cut(){
-        echo "Данную пиццу нарезают по диагонали";
+
+    public function cut(): string
+    {
+        return "Данную пиццу нарезают по диагонали";
     }
 }

@@ -10,7 +10,7 @@ abstract class PizzaStore
     public function orderPizza($type)
     {
         $pizza = $this->createPizza($type);
-        $pizza->prepare();
-        $pizza->cut();
+        echo $pizza->prepare();
+        echo $pizza->cut();
     }
 }
