@@ -1,0 +1,13 @@
+{
+    "name": "pepe/lw3",
+    "description": "pizza cooking",
+    "type": "library",
+    "license": "Apache-2.0",
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "pepe\\lw3\\": "src/"
+        }
+    }
+}
