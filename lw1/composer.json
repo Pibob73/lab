@@ -1,0 +1,12 @@
+{
+    "name": "pepe/lw1",
+    "description": "calc",
+    "type": "library",
+    "license": "Apache-2.0",
+    "minimum-stability": "dev",
+    "require": {
+    },
+    "require-dev": {
+        "phpunit/phpunit": "9.5.x-dev"
+    }
+}
