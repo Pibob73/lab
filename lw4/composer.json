@@ -1,0 +1,21 @@
+{
+    "name": "pepe/lw4",
+    "description": "Pizza",
+    "type": "project",
+    "minimum-stability": "dev",
+    "license": "top-secret",
+    "authors": [
+        {
+            "name": "fe",
+            "email": "fefe@lab.com"
+        }
+    ],
+    "require": {
+        "phpstan/phpstan": "1.9.0",
+        "pepe/lw3": "*"
+    },
+    "repositories": [{
+        "type": "vcs",
+        "url": "https://github.com/Pibob73/pizza.git"
+    }]
+}
