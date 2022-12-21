@@ -31,7 +31,7 @@ class Calculator
     {
         try {
             $this->expression /= $value;
-        }catch (DivisionByZeroError $error){
+        } catch (DivisionByZeroError $error) {
             throw new DivisionByZeroError('division by zero');
         }
         return $this;
