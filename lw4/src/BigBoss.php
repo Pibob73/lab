@@ -7,6 +7,6 @@ class BigBoss extends Pizza
 {
     public string $name = 'Big boss';
     public string $sauce = 'cheese';
-    public array $toppings = ['Ham','Egg boiled', 'soft cheese'];
+    public array $toppings = ['Ham', 'Egg boiled', 'soft cheese'];
 
 }
