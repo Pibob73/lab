@@ -40,7 +40,7 @@ class Date
             $this->sumday += ($helper - 1) * 30 + ($helper + 1) * 31 + $leapYear;
         $this->sumday += intval(($hYear - 1) / 4) * 366;
         $this->sumday += (($hYear - 1) - intval(($hYear - 1) / 4)) * 365;
-        return 0;
+        return $this->sumday;
     }
 
     public function convertToDate(int $num): array

@@ -42,6 +42,3 @@ class Calculator
         return $this->expression;
     }
 }
-
-$calc = new Calculator();
-echo $calc->sum(6.0)->division(0.0)->difference(2.0)->sum(6.0)->multiplication(2.0)->getResult() . "\n";
