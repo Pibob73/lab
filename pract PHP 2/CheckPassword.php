@@ -2,7 +2,7 @@
 require_once 'WrongLoginException.php';
 require_once 'WrongPasswordException.php';
 
-class check_password
+class CheckPassword
 {
     public static function check(string $login, string $password, string $confirmPassword): bool
     {
