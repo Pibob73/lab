@@ -1,13 +1,13 @@
 <?php
 require_once 'animal.php';
 
-class herbivore extends animal
+class Herbivore extends Animal
 {
     function __construct(string $animal, string $walk, string $placeOfResidence)
     {
         $this->animal = $animal;
         $this->placeOfResidence = $placeOfResidence;
-        $this->Walk = $walk;
+        $this->walk = $walk;
     }
 
     function meal(int $weight): string
