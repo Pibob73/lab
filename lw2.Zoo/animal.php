@@ -1,10 +1,10 @@
 <?php
 
-abstract class animal
+abstract class Animal
 {
     protected string $animal;
     protected string $placeOfResidence;
-    protected string $Walk;
+    protected string $walk;
 
     protected abstract function meal(int $weight): string;
 }
